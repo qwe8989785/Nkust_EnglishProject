@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+.inputwrap,
+.tablewrap,
+.fieldwrap {
+    margin: 20px auto;
+    padding: 10px 10%;
+}
+
+.fieldwrap {
+    margin-bottom: 100px;
+}
+
+.inputwrap input {
+    margin: 10px auto;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.39);
+    border: none;
+    display: block;
+}
+
+.inputwrap button {
+    float: right;
+    width: 200px;
+    height: 30px;
+    display: block;
+}
+
+table {
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+form {
+    text-align: center;
+}
+
+.choose-btn{
+    font-size: 16px;
+    border: slategrey solid 1px;
+}
+.upload-btn{
+    width: 80px;
+    height: 36px;
+}
+.talbescrollwrap {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.table-id {
+    width: 10%;
+}
+
+.table-level {
+    width: 15%;
+}
+
+.table-content {
+    width: 75%;
+}
+
+.text-over {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+td {
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    overflow-y: scroll;
+    /* border: 1px solid rgba(70, 70, 70, 0.678); */
+}
+
+tr {
+    margin: 0;
+    padding: 0;
+}
+
+tr:hover {
+    background-color: #ccc;
+}
+
+.fieldwrap input {
+    margin: 10px auto;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.39);
+    border: none;
+    display: block;
+}
+
+.fieldwrap button {
+    float: right;
+    width: 200px;
+    height: 30px;
+    display: block;
+    margin-left: 5px;
+}

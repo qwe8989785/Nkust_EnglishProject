@@ -1,0 +1,51 @@
+{% extends 'index/basic.html' %} {% load static %} {% block content %}
+
+<h1>Named Entity Recognition</h1>
+<p>Named Entity Recognition is the task of identifying named entities (people, locations, organizations, etc.) in the input text.</p>
+
+<div class="model_wrap">
+    <p>Model</p>
+    <select name="model_sleect" id="model_select">
+                    <option value="spaCy">spaCy</option>
+                    <option value="stanza">stanza</option>
+                </select>
+</div>
+
+<div class="funtctionbtn">
+    <div class="Demobtn">Demo</div>
+    <div class="Usagebtn">Download Program</div>
+</div>
+<div class="Demowrap">
+
+    <!-- <div class="titlewrap">
+                    <p>Vocabulary</p>
+                    <input id="originbox" class="" type="text" placeholder='E.g. "apple"'>
+                </div> -->
+    <div class="ETOwrap">
+        <p>Enter test or</p>
+        <!-- <form class="ETOform" action=""> -->
+        <select name="demoselect" id="demoselect">
+                          <option value="Please select a sample sentence">Please select a sample sentence</option>
+                          <option value="11:00, first, 5 kg, 100 dollars, 10%, 10 o'clock, July, English, Code of Hammurabi, The Last Supper, World War, Red wine, Will Smith, Christian, Tower Bridge, White House, Taiwan, Mount Everest">11:00, first, 5 kg, 100 dollars, 10%, 10 o'clock, July, English, Code of Hammurabi, The Last Supper, World War, Red wine, Will Smith, Christian, Tower Bridge, White House, Taiwan, Mount Everest</option>
+                        </select>
+        <!-- </form> -->
+    </div>
+    <div class="titlewrap">
+        <p>Sentence</p>
+        <input id="originbox" class="" type="text" placeholder='E.g. "John likes and Bill hates ice cream."'>
+    </div>
+
+    <button onclick="named_entity_recognition()" class="run-btn">Run</button>
+    <div class="clear"></div>
+</div>
+<div class="Usagewrap">
+
+</div>
+<div id="named_entity_recognition_runwrap" class="runwrap">
+
+</div>
+{% endblock %}
+<!-- 
+    <footer class="footer">
+        Copyright © 2020 Design : NKUST-MIS Version : 1.0
+    </footer> -->

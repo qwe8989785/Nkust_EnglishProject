@@ -1,0 +1,42 @@
+{% extends 'index/basic.html' %} {% load static %} {% block content %}
+<h1>Dependency parsing</h1>
+<p>Dependency parsing</p>
+
+<div class="model_wrap">
+    <p>Model</p>
+    <select name="dependency_parsing_select" id="dependency_parsing_select">
+        <option value="spaCy">spaCy</option>
+        <option value="spaCy square">spaCy square</option>
+    </select>
+</div>
+
+<div class="funtctionbtn">
+    <div class="Demobtn">Demo</div>
+    <div class="Usagebtn">Download Program</div>
+</div>
+<div class="Demowrap">
+    <div class="titlewrap">
+        <div class="ETOwrap">
+            <p>Enter test or</p>
+            <!-- <form class="ETOform" action=""> -->
+            <select name="demoselect" id="demoselect">
+                <option value="Please select a sample sentence">Please select a sample sentence</option>
+            </select>
+        </div>
+        <p>Sentence</p>
+        <input id="originbox" class="" type="text" placeholder='E.g. "They bought Jim the gift he always wanted."' />
+    </div>
+
+    <button onclick="call_dependency_parsing(),spaCy_vis()" class="run-btn">RUN</button>
+    <div class="clear"></div>
+</div>
+<div class="Usagewrap"></div>
+
+<div class="runwrap">
+    <div id="translation"></div>
+    <div id="dependency_parsing_output"></div>
+    <div id="constituency_parsing_output"></div>
+</div>
+{% endblock %} {% block script %}
+<script src="//unpkg.com/hierplane/dist/static/hierplane.min.js"></script>
+{% endblock %}

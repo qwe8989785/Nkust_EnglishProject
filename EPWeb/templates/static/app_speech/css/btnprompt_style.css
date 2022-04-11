@@ -1,0 +1,281 @@
+/*--------------------  button after  -------------------- */
+
+@media (min-width: 1024px) {
+    .speak-btn,
+    .listen-btn,
+    .stop-btn,
+    .playmic-btn,
+    .Examplebtn,
+    .Demobtn,
+    .speak-btn,
+    .Classifybtn,
+    .Downloadbtn {
+        position: relative;
+    }
+    .speak-btn::after {
+        opacity: 0;
+        content: "開始錄音";
+        box-sizing: border-box;
+        width: 90px;
+        padding: 0 5px;
+        line-height: 30px;
+        border-radius: 5px;
+        font-weight: 100;
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        position: absolute;
+        top: -35px;
+        left: -17px;
+        transition: .4s;
+    }
+    .listen-btn::after {
+        opacity: 0;
+        content: "播放";
+        box-sizing: border-box;
+        width: 90px;
+        padding: 0 5px;
+        line-height: 30px;
+        border-radius: 5px;
+        font-weight: 100;
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        position: absolute;
+        top: -35px;
+        left: -17px;
+        transition: .4s;
+    }
+    .stop-btn::after {
+        opacity: 0;
+        content: "停止錄音";
+        box-sizing: border-box;
+        width: 90px;
+        padding: 0 5px;
+        line-height: 30px;
+        border-radius: 5px;
+        font-weight: 100;
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        position: absolute;
+        top: -35px;
+        left: -17px;
+        transition: .4s;
+    }
+    .playmic-btn::after {
+        opacity: 0;
+        content: "播放錄音";
+        box-sizing: border-box;
+        width: 90px;
+        padding: 0 5px;
+        line-height: 30px;
+        border-radius: 5px;
+        font-weight: 100;
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        position: absolute;
+        top: -35px;
+        left: -17px;
+        transition: .4s;
+    }
+    /* .Examplebtn::after {
+        opacity: 0;
+        content: "重新產生範例";
+        box-sizing: border-box;
+        width: 120px;
+        padding: 0 5px;
+        line-height: 30px;
+        border-radius: 5px;
+        font-weight: 100;
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        position: absolute;
+        top: -35px;
+        left: 25px;
+        transition: .4s;
+    } */
+    .Demobtn::after {
+        opacity: 0;
+        content: "練習翻譯例句";
+        box-sizing: border-box;
+        width: 120px;
+        padding: 0 5px;
+        line-height: 30px;
+        border-radius: 5px;
+        font-weight: 100;
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        position: absolute;
+        top: -35px;
+        left: -27px;
+        transition: .4s;
+    }
+    .Classifybtn::after {
+        opacity: 0;
+        content: "分類級別";
+        box-sizing: border-box;
+        width: 90px;
+        padding: 0 5px;
+        line-height: 30px;
+        border-radius: 5px;
+        font-weight: 100;
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        position: absolute;
+        top: -35px;
+        left: -8px;
+        transition: .4s;
+    }
+    .stop-btn::after {
+        opacity: 0;
+        content: "停止錄音";
+        box-sizing: border-box;
+        width: 90px;
+        padding: 0 5px;
+        line-height: 30px;
+        border-radius: 5px;
+        font-weight: 100;
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        position: absolute;
+        top: -35px;
+        left: -17px;
+        transition: .4s;
+    }
+    .Downloadbtn::after {
+        opacity: 0;
+        content: "下載";
+        box-sizing: border-box;
+        width: 90px;
+        padding: 0 5px;
+        line-height: 30px;
+        border-radius: 5px;
+        font-weight: 100;
+        background-color: #333;
+        color: #fff;
+        font-size: 14px;
+        position: absolute;
+        top: -35px;
+        left: -0px;
+        transition: .4s;
+    }
+    .speak-btn:hover::after,
+    .listen-btn:hover::after,
+    .stop-btn:hover::after,
+    .playmic-btn:hover::after,
+    .Examplebtn:hover::after,
+    .Demobtn:hover::after,
+    .stop-btn:hover::after,
+    .Classifybtn:hover::after,
+    .Downloadbtn:hover::after {
+        opacity: 1;
+    }
+}
+
+@media (max-width :1024px) {
+    .speak-btn,
+    .listen-btn,
+    .stop-btn,
+    .playmic-btn,
+    .Examplebtn,
+    .Demobtn,
+    .Classifybtn,
+    .Downloadbtn {
+        position: relative;
+    }
+    .Examplebtn {
+        width: 140px;
+    }
+    .speak-btn::after {
+        font-size: 14px !important;
+        content: "錄音";
+        opacity: .8;
+        position: absolute;
+        top: 110%;
+        color: #000;
+        font-weight: 100;
+        left: 11px;
+    }
+    .listen-btn::after {
+        font-size: 14px !important;
+        content: "播放";
+        opacity: .8;
+        position: absolute;
+        top: 110%;
+        color: #000;
+        font-weight: 100;
+        left: 11px;
+    }
+    .playmic-btn::after {
+        font-size: 14px !important;
+        content: "播放錄音";
+        opacity: .8;
+        position: absolute;
+        width: 100px;
+        top: 110%;
+        color: #000;
+        font-weight: 100;
+        left: -23px;
+    }
+    /* .Examplebtn::after {
+        font-size: 14px !important;
+        content: "重新產生範例";
+        opacity: .8;
+        position: absolute;
+        width: 100px;
+        top: 110%;
+        color: #000;
+        font-weight: 100;
+        left: 34px;
+    } */
+    .Demobtn::after {
+        font-size: 14px !important;
+        content: "練習翻譯例句";
+        opacity: .8;
+        position: absolute;
+        width: 100px;
+        top: 110%;
+        color: #000;
+        font-weight: 100;
+        left: -18px;
+    }
+    .Classifybtn::after {
+        font-size: 14px !important;
+        content: "分類級別";
+        opacity: .8;
+        position: absolute;
+        width: 100px;
+        top: 110%;
+        color: #000;
+        font-weight: 100;
+        left: -13px;
+    }
+    .stop-btn::after {
+        font-size: 14px !important;
+        content: "停止錄音";
+        opacity: .8;
+        position: absolute;
+        width: 100px;
+        top: 110%;
+        color: #000;
+        font-weight: 100;
+        left: -25px;
+    }
+    .Downloadbtn::after {
+        font-size: 14px !important;
+        content: "下載";
+        opacity: .8;
+        position: absolute;
+        width: 100px;
+        top: 110%;
+        color: #000;
+        font-weight: 100;
+        left: -7px;
+    }
+}

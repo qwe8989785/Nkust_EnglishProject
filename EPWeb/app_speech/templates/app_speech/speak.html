@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak</title>
+
+    <!------------ css link ------------>
+    <link rel="stylesheet" href="{% static 'app_speech/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'app_speech/css/fontawesome-free-5.13.0-web/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'app_speech/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'app_speech/css/btnprompt_style.css' %}">
+
+</head>
+
+<body>
+    <div class="loadingwrap">
+        <div class="loader"></div>
+    </div>
+
+    <section>
+        <!------------ navbar ------------>
+        <nav>
+            <div class="navbar">
+                <input type="checkbox" name="check" id="check">
+                <label for="check">
+                    <i class="fas fa-bars" id="checkon"></i>
+                    <i class="fas fa-times" id="checkoff"></i>
+                </label>
+                <img src="https://picsum.photos/150/50">
+                <ul>
+                    <li><a href="#">Solution</a></li>
+                    <li><a href="#">Document</a></li>
+                    <li><a href="userindex">Technical Analysis</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <section id="container">
+        <!------------ content ------------>
+        <div class="container">
+
+            <h1>Speaking</h1>
+
+
+
+            <div class="wrap">
+
+                <div class="speaking">
+                    <div class="Languagewrap">
+                        <!-- <h1 class="speakingtitle">Translate</h1> -->
+                        <div class="leftbox">
+                            <div class="Languagebtn">
+                                <div class="Languagetxt" id="left-input">英文</div>
+                            </div>
+                        </div>
+                        <!-- <i class="fas fa-exchange-alt changelanguage" onclick="changelanguage(),changetext()"></i> -->
+                        <div class="rightbox">
+                            <div class="Languagebtn">
+                                <div class="Languagetxt" id="right-output">中文</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="txtwrap">
+                        <textarea id="originbox" class="auto-height changewrap" placeholder="Enter or paste text here"></textarea>
+                        <i class="clear fas fa-times" onclick="cleartext()"></i>
+                        <div class="wordcount" id="wordcount">0/500</div>
+                        <textarea id="translationbox" readonly="readonly" class="auto-height englishwrap" placeholder="翻譯"></textarea>
+                    </div>
+                    <div class="btnwrap">
+                        <button class="btn speak-btn" id="translate-start" onclick="TSspeakchange(),startButton(event)"><div class="tetnone">Speak</div><i class="fas fa-microphone"></i></button>
+                        <button class="btn stop-btn displaynone" id="translate-stop" onclick="TSspeakchange(),stopButton(event)"><div class="tetnone">Stop</div><i class="fas fa-microphone"></i></button>
+                        <button class="btn listen-btn" onclick="read()"><div class="tetnone" >Listen</div><i class="fas fa-volume-up"></i></button>
+                        <button class="Demobtn" onclick="getRandSent()">Demo</button>
+                    </div>
+
+                </div>
+                <div class="oraling">
+                    
+                    <div class="titlewrap">
+                        <h1>Keywords</h1>
+                        <h1>Exercise</h1>
+                    </div>
+
+                    <div class="txtwrap">
+                        <textarea id="keywordslistbox" class="oralingwrap" readonly="readonly"></textarea>
+                        <textarea id="exercisebox" class="oralingwrap" readonly="readonly"></textarea>
+                    </div>
+                    <div class="btnwrap">
+                        <div class="keybtnwrap">
+
+                        </div>
+                        <div class="exercisebtnwrap">
+                            <button class="btn speak-btn" id="record-start" onclick="EXspeakchange(),startButton_record(event)"><div class="tetnone">Speak</div><i class="fas fa-microphone"></i></button>
+                            <button class="btn stop-btn displaynone" id="record-stop" onclick="EXspeakchange(),stopButton_record(event)"><div class="tetnone">Stop</div><i class="fas fa-microphone"></i></button>
+                            <button class="btn listen-btn" onclick="readforrecord()"><div class="tetnone">Listen</div><i class="fas fa-volume-up"></i></button>
+                            <button class="btn playmic-btn" onclick="PlayBack()"><div class="tetnone">PlayBack</div><i class="fas fa-headphones-alt"></i></button>
+
+                            <!-- <button class="Examplebtn" onclick="Democleartext()">重新產生範例</button> -->
+                        </div>
+
+                    </div>
+                </div>
+                <div id='gUMArea'>
+                    <button id="mediaVideo" style="display:none;">audio</button>
+                </div>
+                <div id='btns'>
+                    <button class="btn btn-default" id="start" style="display:none;">Start</button>
+                    <button class="btn btn-default" id="stop" style="display:none;">Stop</button>
+                </div>
+                <div id="audio1">
+                    <audio id="localAudio" class="audio-player" style="display:none;">
+                    </audio>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!------------ footer ------------>
+    <footer id="footer" class="footer">
+        Cppyright &copy; 2020
+    </footer>
+
+
+    <!------------ js src ------------>
+    <script src="{% static 'app_speech/js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'app_speech/js/index.js' %}"></script>
+    <script src="{% static 'app_speech/js/speak_main.js' %}"></script>
+    <script src="{% static 'app_speech/js/speak_record.js' %}"></script>
+    <script>
+        // let scrollmove = window.pageYOffset
+        // $(window.document).scroll(function() {
+
+        //     if ($("#check").prop("checked") === false) {
+        //         if (scrollmove < window.pageYOffset) {
+        //             $('nav').addClass('scrollmoveoff')
+        //             $('nav').removeClass('scrollmoveon')
+        //             scrollmove = window.pageYOffset
+        //         } else {
+        //             $('nav').addClass('scrollmoveon')
+        //             $('nav').removeClass('scrollmoveoff')
+        //             scrollmove = window.pageYOffset
+        //         }
+        //     }
+        // })
+
+        // $("textarea.auto-height").css("overflow", "hidden").bind("keydown keyup change", function() {
+        //     $(this).height('0px').height($(this).prop("scrollHeight") + 'px');
+        // }).keydown();
+    </script>
+    <script>
+        $('.loadingwrap').hide()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+{% extends 'index/basic.html' %} {% load static %} {% block content %}
+
+<h1>Sentence</h1>
+<p>Sentence</p>
+<div class="model_wrap">
+    <p>Model</p>
+    <select name="setence_sourceselect" id="setence_sourceselect">
+                    <option value="WordNet">WordNet</option>
+                    <option value="SentenceCount">SentenceCount</option>
+                </select>
+</div>
+<div class="funtctionbtn">
+    <div class="Demobtn">Demo</div>
+    <div class="Usagebtn">Download Program</div>
+</div>
+<div id="snetence_content">
+    <div class="Demowrap">
+
+
+        <div class="ETOwrap">
+            <p>Level</p>
+            <!-- <form class="ETOform" action=""> -->
+            <select name="levelselect" id="setence_levelselect">
+                               <option value="A1">A1</option>
+                               <option value="A2">A2</option>
+                               <option value="B1">B1</option>
+                               <option value="B3">B2</option>
+                               <option value="C1">C1</option>
+                            </select>
+            <!-- </form> -->
+        </div>
+
+        <button onclick="call_setence_POS()" class="run-btn">Run</button>
+
+        <div class="clear"></div>
+    </div>
+    <div class="Usagewrap">
+
+    </div>
+    <div class="runwrap">
+        <div class="vocabularytitle">
+            <h1>WordNet</h1>
+        </div>
+        <div class="vocabularycontent">
+            <p id="setence_level" class="classify">null</p>
+            <h2 class="sentencetitle">Sentence</h2>
+            <ul id="sentence_output" class="sentence">
+
+            </ul>
+            <!-- <div class="more">
+                            <button>more...</button>
+                        </div> -->
+        </div>
+    </div>
+</div>
+
+<div id="sentence_count_container">
+    <div class="Demowrap">
+        <div class="ETOwrap">
+            <p>Level</p>
+            <!-- <form class="ETOform" action=""> -->
+            <select name="levelselect" id="setence_count_select">
+                <option value="WordNet">WordNet</option>
+                <option value="Tatoeba">Tatoeba</option>
+                <option value="all">all</option>
+                </select>
+            <!-- </form> -->
+        </div>
+
+        <button onclick="getSentCount()" class="run-btn">Run</button>
+
+        <div class="clear"></div>
+    </div>
+    <div class="Usagewrap">
+
+    </div>
+    <div class="runwrap">
+
+    </div>
+</div>
+
+{% endblock %} {% block script %}
+
+<script>
+    ;
+    (function() {
+        $('#sentence_count_container').hide();
+        $('#setence_sourceselect').on('change', () => {
+            let currently = $(('#setence_sourceselect')).val();
+            console.log(currently);
+            if (currently === 'SentenceCount') {
+                $('#sentence_count_container').show();
+                $('#snetence_content').hide();
+            } else {
+                $('#sentence_count_container').hide();
+                $('#snetence_content').show();
+            }
+        })
+    })()
+</script>
+
+
+{% endblock %}

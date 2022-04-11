@@ -1,0 +1,44 @@
+{% extends 'index/basic.html' %} {% load static %} {% block content %}
+
+<h1>vocabulary_graphical</h1>
+<p>vocabulary_graphical</p>
+
+<div class="model_wrap">
+    <p>Model</p>
+    <select name="model_wrap" id="model_wrap">
+        <option value="vocabulary graphical">vocabulary graphical</option>
+    </select>
+</div>
+
+<div class="funtctionbtn">
+    <div class="Demobtn">Demo</div>
+    <div class="Usagebtn">Download Program</div>
+</div>
+<div class="Demowrap">
+    <div class="ETOwrap">
+        <p>Level</p>
+        <!-- <form class="ETOform" action=""> -->
+        <select name="levelselect" id="getVgDate_levelselect">
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+            <option value="C1">C1</option>
+            <option value="all">All</option>
+        </select>
+        <!-- </form> -->
+    </div>
+
+    <button onclick="call_getVgDate_POS()" class="run-btn">Run</button>
+    <div class="clear"></div>
+</div>
+<div class="Usagewrap"></div>
+<div class="runwrap">
+    <div class="vocabularytitle"></div>
+    <div class="vocabularycontent">
+        <text>數量:</text>
+        <text id="count">0</text>
+        <svg width="960" height="500"></svg>
+    </div>
+</div>
+{% endblock %}

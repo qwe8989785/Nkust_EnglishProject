@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>chat</title>
+        <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css" />
+        <link rel="stylesheet" href="{% static 'app_backend/css/chatbot.css' %}" />
+        <link rel="stylesheet" href="{% static 'app_backend/css/fontawesome-free-5.13.0-web/css/all.min.css' %}" />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="menus">
+                <h1>Chatbot Model</h1>
+                <div class="navbar">
+                    <ul>
+                        <li><a href="userindex">Back out</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="charbox-container">
+                <div class="chatbot-info">
+                    <h2>目前搜尋到可使用的語言</h2>
+                    <select name="langSelect" id="langSelect">
+                        <option value="en-US">en-US</option>
+                        <option value="zh-TW">zh-TW</option>
+                        <option value="en-GB">en-GB</option>
+                    </select>
+                    <h2>語音速度</h2>
+                    <select name="speedSelect" id="speedSelect">
+                        <option value="1">1</option>
+                        <option value="0.8">0.8</option>
+                        <option value="0.5">0.5</option>
+                    </select>
+                    <h1>You can input or use the microphone at will</h1>
+                    <h2>
+                        Usable examples: <br />
+                        1. How can I protect myself?<br />
+                        2. What should I do if I have had close contact with someone who has COVID-19? <br />
+                        3. Is it possible to have the flu and COVID-19 at the same time? <br />
+                    </h2>
+                </div>
+                <div class="chatbox">
+                    <div class="chatlogs">
+                        <div class="chat chatbot">
+                            <p class="chat-message">Hello! Welcome to Covid-19 Chatbot.</p>
+                        </div>
+                    </div>
+                    <div class="chatprompt"></div>
+                    <div class="chat-form">
+                        <textarea id="sent-textarea"></textarea>
+                        <button id="sent-button" class="sent-button model-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <button id="micstart-button" class="micstart-button model-button">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button id="micstop-button" class="micstop-button model-button">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="{% static 'app_backend/js/jquery-3.4.1.min.js' %}"></script>
+        <!-- <script>
+            $.getJSON('../static/app_backend/json/data.json', function (json) {
+                console.log(json);
+            });
+        </script> -->
+        <script src="{% static 'app_backend/js/chatbot.js' %}"></script>
+        <script src="{% static 'app_backend/js/userindex.js' %}"></script>
+    </body>
+</html>

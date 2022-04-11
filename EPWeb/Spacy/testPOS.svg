@@ -1,0 +1,12 @@
+Can         VERB      aux       
+you         PRON      nsubj     
+remind      VERB      ROOT      
+me          PRON      dobj      
+that        SCONJ     mark      
+I           PRON      nsubj     
+need        VERB      ccomp     
+to          PART      aux       
+buy         VERB      xcomp     
+some        DET       det       
+milk        NOUN      dobj      
+?           PUNCT     punct     

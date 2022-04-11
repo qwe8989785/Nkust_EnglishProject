@@ -1,0 +1,64 @@
+{% extends 'index/basic.html' %} {% load static %} {% block content %}
+<h1>strcutre</h1>
+<p>strcutre</p>
+
+<div class="model_wrap">
+    <p>Model</p>
+    <select name="constituency_parsing_select" id="constituency_parsing_select">
+        <option value="spaCy">spaCy</option>
+    </select>
+</div>
+
+<div class="funtctionbtn">
+    <div class="Demobtn">Demo</div>
+    <div class="Usagebtn">Download Program</div>
+</div>
+<div class="Demowrap">
+    <div class="titlewrap">
+        <div class="ETOwrap">
+            <p>Enter test or</p>
+            <!-- <form class="ETOform" action=""> -->
+            <select name="demoselect" id="demoselect">
+                <option value="Please select a sample sentence">Please select a sample sentence</option>
+            </select>
+        </div>
+        <p>Sentence</p>
+        <input id="originbox" class="" type="text" placeholder='E.g. "They bought Jim the gift he always wanted."' />
+    </div>
+
+    <button onclick="spaCy_strcutre()" class="run-btn">RUN</button>
+    <div class="clear"></div>
+</div>
+<div class="Usagewrap"></div>
+
+<div class="runwrap">
+    <div id="strcutre_translate"></div>
+    <div id="structre_img"></div>
+
+    <table id="strcutre_table">
+        <thead>
+            <tr>
+                <td colspan="6">Word</td>
+                <td colspan="2">Depency Relation</td>
+                <td colspan="1">Word / Phrase / Clause</td>
+            </tr>
+            <tr>
+                <td>index</td>
+                <td>From</td>
+                <td>Lemma</td>
+                <td>POS</td>
+                <td>Description</td>
+                <td>Link to index</td>
+                <td>Relation</td>
+                <td>Description</td>
+                <td>From</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <!-- <div id="translation"></div> -->
+    <div id="constituency_parsing_output"></div>
+</div>
+{% endblock %} {% block script %}
+<script src="//unpkg.com/hierplane/dist/static/hierplane.min.js"></script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'index/basic.html' %} {% load static %} {% block content %}
+
+<h1>Part Of Speech tagging</h1>
+<p>Part Of Speech tagging</p>
+
+<div class="model_wrap">
+    <p>Model</p>
+    <select name="model_sleect" id="model_select">
+        <option value="spacy">spacy</option>
+        <option value="stanford">stanford</option>
+    </select>
+</div>
+
+<div class="funtctionbtn">
+    <div class="Demobtn">Demo</div>
+    <div class="Usagebtn">Download Program</div>
+</div>
+<div class="Demowrap">
+    <div class="ETOwrap">
+        <p>Enter test or</p>
+        <select name="demoselect" id="demoselect">
+            <option value="Please select a sample sentence">Please select a sample sentence</option>
+        </select>
+    </div>
+    <div class="ETOwrap">
+        <p>Direction</p>
+        <select name="direction_select" id="direction_select">
+            <option value="horizontal">horizontal</option>
+            <option value="straight">straight</option>
+        </select>
+    </div>
+    <div class="titlewrap">
+        <p>Sentence</p>
+        <input id="originbox" class="" type="text" placeholder='E.g. "John likes and Bill hates ice cream."' />
+    </div>
+
+    <button onclick="POS_tagging()" class="run-btn">Run</button>
+    <div class="clear"></div>
+</div>
+<div class="Usagewrap"></div>
+<div id="POS_tagging_runwrap" class="runwrap"></div>
+{% endblock %}

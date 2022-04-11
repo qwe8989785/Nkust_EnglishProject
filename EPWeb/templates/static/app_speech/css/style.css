@@ -1,0 +1,716 @@
+* {
+    font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.Languagetxt {
+    display: none;
+}
+
+.displaynone {
+    display: none !important;
+}
+
+.overflowhidden {
+    overflow: hidden;
+}
+
+.loadingwrap {
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.loader {
+    /* display: none; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 6px solid #f3f3f3;
+    /* Light grey */
+    border-top: 6px solid #6d6d6d;
+    /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*--------------------  navbar  -------------------- */
+
+nav {
+    height: 80px;
+    width: 100%;
+    background: #0984e3;
+    box-shadow: 0px 3px 5px rgba(82, 82, 82, 0.406);
+}
+
+nav img {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 17px;
+    left: 5%;
+}
+
+nav ul {
+    float: right;
+    margin-right: 25px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    position: relative;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 5px 0;
+    transition: .3s;
+}
+
+nav ul li a::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -8px;
+    height: 2px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    /* transform-origin: left; */
+    transition: all .3s;
+}
+
+nav ul li:hover a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+nav ul li a:hover::before {
+    opacity: 1;
+    bottom: 0px;
+}
+
+label #checkon,
+label #checkoff {
+    color: #fff;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width:1118px) {
+    nav ul li a {
+        font-size: 17px;
+    }
+    .txtwrap .englishwrap,
+    .txtwrap .changewrap,
+    .txtwrap .oralingwrap {
+        font-size: 20px !important;
+    }
+}
+
+@media (min-width :1400px) {
+    .txtwrap .englishwrap,
+    .txtwrap .changewrap,
+    .txtwrap .oralingwrap {
+        height: 220px !important;
+        overflow-y: scroll;
+        padding: 15px 40px 15px 20px !important;
+        width: 100%;
+        font-size: 20px;
+        margin: 10px 20px;
+    }
+    .speaking,
+    .oraling {
+        width: 100%;
+        max-width: 1200px !important;
+    }
+}
+
+@media (max-width:1024px) {
+    .tetnone {
+        display: none !important;
+    }
+    .wrap .btn {
+        width: 50px !important;
+        margin: 5px 10px !important;
+    }
+    .txtwrap .englishwrap,
+    .txtwrap .changewrap,
+    .txtwrap .oralingwrap {
+        font-size: 20px !important;
+        height: 200px !important;
+    }
+    .speaking,
+    .oraling {
+        width: 90% !important;
+    }
+    .wordcount {
+        display: none !important;
+    }
+}
+
+@media (max-width:768px) {
+    label #checkon {
+        display: block;
+    }
+    nav {
+        height: 60px;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+    }
+    .scrollmoveoff {
+        margin-top: -60px !important;
+        transition: .3s;
+    }
+    .scrollmoveon {
+        margin-top: 0 !important;
+        transition: .3s;
+    }
+    nav ul {
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+        height: calc(100vh + 60px);
+        background: #0984e3;
+        top: 60px;
+        left: -100%;
+        text-align: center;
+        transition: .5s;
+    }
+    nav img {
+        top: 5px
+    }
+    label #checkon,
+    label #checkoff {
+        line-height: 60px;
+    }
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 17px;
+    }
+    #check:checked~ul {
+        left: 0;
+    }
+    #check:checked~label #checkon {
+        display: none;
+    }
+    #check:checked~label #checkoff {
+        display: block;
+    }
+    .container {
+        margin-top: 50px;
+    }
+    .container h1 {
+        font-size: 26px !important;
+    }
+    .wrap h1 {
+        font-size: 20px !important;
+        text-align: center !important;
+    }
+    /* .speakingtitle::after {
+        content: "" !important;
+    } */
+    .question-icon {
+        margin-left: 10px !important;
+    }
+    .prompt {
+        max-width: 90%;
+        box-sizing: border-box;
+        left: 5% !important;
+        top: 15% !important;
+        align-self: center;
+    }
+    .prompt-left,
+    .prompt-right {
+        font-size: 12px;
+    }
+    .speaking,
+    .oraling {
+        width: 95% !important;
+    }
+    .speaking,
+    .oraling {
+        padding: 15px 10px !important;
+    }
+    .txtwrap {
+        display: flex;
+        flex-direction: column;
+    }
+    .txtwrap .englishwrap,
+    .txtwrap .changewrap,
+    .txtwrap .oralingwrap {
+        height: 120px !important;
+        padding: 10px 40px 10px 10px !important;
+        width: 100%;
+        font-size: 17px !important;
+    }
+    .btnwrap {
+        padding: 0 !important;
+        flex-direction: row;
+        align-items: center;
+        /* justify-content: space-around; */
+    }
+    .btn-topwrap {
+        width: 100% !important;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .btn-bottomwrap {
+        margin: 5px;
+        display: flex;
+    }
+    .level {
+        height: 30px !important;
+        margin: 0 5px !important;
+        padding: 0 !important;
+    }
+    .clear {
+        top: 10% !important;
+        right: 20px !important;
+    }
+}
+
+
+/*--------------------  content  -------------------- */
+
+.container {
+    width: 100%;
+    position: relative;
+}
+
+.container h1 {
+    padding: 5px 0;
+    text-align: center;
+    font-size: 32px;
+    /* color: #ff793f; */
+    /* position: relative; */
+}
+
+
+/* 
+.speakingtitle::after {
+    content: "Turn on voice Input, Enter Text, Paste, Upload or use Demo";
+    margin: 0 0 0 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #888;
+} */
+
+.question-icon {
+    color: green;
+    margin-left: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.question-icon:hover+.prompt {
+    /* display: block !important; */
+    visibility: initial;
+    opacity: 1;
+}
+
+.prompt {
+    font-size: 18px;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 10%;
+    left: calc(50% - 320px);
+    width: 600px;
+    height: 500px;
+    background-color: rgb(250, 250, 250);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.281);
+    transition: .4s;
+    padding: 10px 20px;
+    display: flex;
+}
+
+.prompt-left,
+.prompt-right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 14px;
+}
+
+.prompt-left p,
+.prompt-right p {
+    padding: 7px 5px;
+    height: 20px;
+}
+
+.btn {
+    width: 150px;
+    padding: 7px 5px;
+    margin: 2px auto;
+    border-radius: 20px;
+    border: none;
+    background-color: #20bf6b;
+    color: #fff;
+    font-weight: 600;
+    transition: .3s;
+    cursor: pointer;
+    outline: none;
+}
+
+.stop-btn {
+    background-color: #ff0000;
+}
+
+.stop-btn:hover {
+    background-color: #ff0000 !important;
+}
+
+.clear {
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    right: 54%;
+    opacity: .45;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.wordcount {
+    display: inline-block;
+    position: absolute;
+    top: 82%;
+    right: 53%;
+    opacity: .45;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #158e4d;
+    width: 65%;
+}
+
+.currentposition,
+.totlaposition {
+    line-height: 22px;
+    font-size: 20px;
+}
+
+.currentposition::after {
+    content: " / ";
+    margin-right: 5px;
+}
+
+.promptwrap p {
+    line-height: 2em;
+    padding: 25px 0;
+}
+
+
+/*--------------------  wrap  -------------------- */
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.speaking,
+.oraling {
+    position: relative;
+    box-sizing: border-box;
+    width: 95%;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.281);
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+
+/* .oraling::after {
+    content: "Speak ";
+    margin: 0 0 0 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #888;
+} */
+
+.titlewrap {
+    display: flex;
+    justify-content: space-around;
+    /* padding: 0 3%; */
+}
+
+.titlewrap h1 {
+    width: 50%;
+    padding-left: 1% !important;
+}
+
+.wrap h1 {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    color: #34ace0;
+    font-size: 30px;
+}
+
+.txtwrap {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tetnone {
+    display: none !important;
+}
+
+.changewrap,
+.englishwrap {
+    box-sizing: border-box;
+    font-size: 24px;
+    overflow-y: scroll;
+    width: 48%;
+    height: 200px;
+    outline: none;
+    border: 3px solid #34ace0;
+    resize: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px 40px 10px 15px;
+}
+
+.oralingwrap {
+    box-sizing: border-box;
+    overflow-y: scroll;
+    font-size: 24px;
+    width: 48%;
+    height: 200px;
+    outline: none;
+    border: 3px solid #34ace0;
+    resize: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px 20px;
+}
+
+.btnwrap {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.keybtnwrap,
+.exercisebtnwrap {
+    width: 50%;
+}
+
+@media only screen and (max-width:768px) {
+    .keybtnwrap {
+        width: 0;
+    }
+    .exercisebtnwrap {
+        width: 100%;
+    }
+}
+
+.oraling .btnwrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrap .btn {
+    height: 30px;
+    width: 60px;
+    margin: 5px 5px;
+    transition: .4s;
+}
+
+.Examplebtn {
+    background-color: #f1c40f;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: .3s;
+}
+
+.Demobtn:hover,
+.Classifybtn:hover,
+.Downloadbtn:hover {
+    background-color: #f39c12;
+}
+
+.Demobtn,
+.Classifybtn,
+.Downloadbtn {
+    background-color: #f1c40f;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: .3s;
+}
+
+.Examplebtn:hover {
+    background-color: #f39c12;
+}
+
+.btn-bottomwrap {
+    display: flex;
+}
+
+.nextcontrol {
+    width: 22px;
+    height: 22px;
+    border: 0;
+    margin: 0 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.nextcontrol i {
+    background: #fff;
+    font-size: 22px;
+    color: #20bf6b;
+    display: block;
+    transition: .3s;
+}
+
+.nextcontrol i:hover {
+    color: #158e4d;
+}
+
+.btn i {
+    margin: 0 5px;
+}
+
+.tetnone {
+    display: inline-block;
+}
+
+.level {
+    width: 100px;
+    height: 30px;
+    padding: 7px 5px;
+    margin: 2px auto;
+    border-radius: 5px;
+    border: none;
+    background-color: #20bf6b;
+    color: #fff;
+    font-weight: 600;
+    transition: .3s;
+    cursor: pointer;
+    outline: none;
+}
+
+.Languagewrap {
+    display: flex;
+    padding: 0;
+    font-size: 18px;
+}
+
+.leftbox {
+    display: flex;
+    justify-content: flex-end;
+    width: 47%;
+}
+
+.rightbox {
+    display: flex;
+    width: 47%;
+}
+
+.changelanguage {
+    width: 6%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    color: #000;
+    opacity: .45;
+    transition: .3s;
+}
+
+.changelanguage:hover {
+    opacity: 1;
+}
+
+.Languagewrap .Languagebtn {
+    position: relative;
+    line-height: 30px;
+    width: 70px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+
+/* .Languagewrap .Languagebtn::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    height: 3px;
+    background-color: rgb(88, 171, 219);
+    top: 100%;
+    left: 0;
+} */
+
+
+/*--------------------  footer  -------------------- */
+
+.footer {
+    margin-top: 20px;
+    background: #0984e3;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+}

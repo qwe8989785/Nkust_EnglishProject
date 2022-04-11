@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+    <body>
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>後端技術分析</title>
+            <link rel="stylesheet" href="{% static 'app_backend/css/userstyle.css' %}" />
+            <link rel="stylesheet" href="{% static 'app_backend/css/bootstrap.min.css' %}" />
+            <link rel="stylesheet" href="{% static 'app_backend/css/fontawesome-free-5.13.0-web/css/all.min.css' %}" />
+            <link rel="stylesheet" type="text/css" href="//unpkg.com/hierplane/dist/static/hierplane.min.css" />
+        </head>
+        <header>後端技術分析</header>
+        <div class="loadingTime"></div>
+        <div class="conatainer">
+            <nav>
+                <input class="navcheckbox" type="checkbox" id="navcheckbox" />
+                <label class="checkwrap" for="navcheckbox">
+                    <i class="fas fa-bars" id="checkon"></i>
+                    <i class="fas fa-times" id="checkoff"></i>
+                </label>
+                <div class="sidenavbar">
+                    <div class="logo">
+                        <h1>後端技術分析</h1>
+                    </div>
+
+                    <ul>
+                        <div class="phonenav">
+                            <a class="aloneitem phoneitem"><i class="fas fa-user"></i>admin</a>
+                        </div>
+                        <li>
+                            <a class="item">- User Experience</a>
+                            <ul class="smenu">
+                                <li>
+                                    <a href="#">Speaking</a>
+                                </li>
+                                <li>
+                                    <a href="#">Listening</a>
+                                </li>
+                                <li>
+                                    <a href="#">Writing</a>
+                                </li>
+                                <li>
+                                    <a href="#">Reading</a>
+                                </li>
+                                <li>
+                                    <a href="vocabulary">Vocabulary</a>
+                                </li>
+                                <!-- <li>
+                                    <a href="vocabulary_graphical">Vocabulary graphical</a>
+                                </li> -->
+                                <li>
+                                    <a href="sentence">Sentence</a>
+                                </li>
+                                <li>
+                                    <a href="words">Words</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pronunciation</a>
+                                </li>
+                                <li>
+                                    <a href="#">Grammar </a>
+                                </li>
+                                <li>
+                                    <a href="chatbot">Chatbot</a>
+                                </li>
+                                <li>
+                                    <a href="strcutre">strcutre</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="item">- NLP/ML tools</a>
+                            <ul class="smenu">
+                                <li>
+                                    <a href="userindex">Translation</a>
+                                </li>
+                                <li>
+                                    <a href="sentence_segmentation">Sentence segmentation</a>
+                                </li>
+                                <li>
+                                    <a href="tokenization">Tokenization</a>
+                                </li>
+                                <li>
+                                    <a href="part_of_speech_tagging">Part-of-speech tagging</a>
+                                </li>
+                                <li>
+                                    <a href="shallow_parsing">Shallow parsing (Text chunking)</a>
+                                </li>
+                                <li>
+                                    <a href="dependency_parsing">Dependency parsing</a>
+                                </li>
+                                <!-- <li>
+                                    <a href="constituency_parsing">Constituency parsing</a>
+                                </li> -->
+                                <li>
+                                    <a href="named_entity_recognition">Named entity recognition</a>
+                                </li>
+                                <li>
+                                    <a href="bert">bert</a>
+                                </li>
+                                <li>
+                                    <a href="#">Open information extraction</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sentiment Analysis and Classification</a>
+                                </li>
+                                <li>
+                                    <a href="#">Semantic Role Labeling</a>
+                                </li>
+                                <li>
+                                    <a href="#">Summarization</a>
+                                </li>
+                                <li>
+                                    <a href="#">Visualization</a>
+                                </li>
+                                <li>
+                                    <a href="#">Entity linking</a>
+                                </li>
+                                <li>
+                                    <a href="#">Coreference resolution</a>
+                                </li>
+                                <li>
+                                    <a href="#">Semantic parsing</a>
+                                </li>
+                                <li>
+                                    <a href="#">WikiTableQuestions Semantic Parser</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cornell NLVR Semantic Parser</a>
+                                </li>
+                                <li>
+                                    <a href="#">Text to SQL (ATIS)</a>
+                                </li>
+                                <li>
+                                    <a href="#">Open Information Extraction</a>
+                                </li>
+                                <li>
+                                    <a href="#">Text to Vectors (Word Enbedding)</a>
+                                </li>
+                                <li>
+                                    <a href="#">Text Similarity</a>
+                                </li>
+                                <li>
+                                    <a href="#">Text summarization</a>
+                                </li>
+                                <li>
+                                    <a href="#">Text Classification</a>
+                                </li>
+                                <li>
+                                    <a href="#">Speech Recognition (ASR)</a>
+                                </li>
+                                <li>
+                                    <a href="#">Speech Synthesis</a>
+                                </li>
+                                <li>
+                                    <a href="#">Frequent Asking Question</a>
+                                </li>
+                                <li>
+                                    <a href="#">Knowledge Base Question Answer</a>
+                                </li>
+                                <li>
+                                    <a href="#">Dialogue Bot for goal-oriented </a>
+                                </li>
+                                <li>
+                                    <a href="#">Opendomain Question Answer</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="item">- Conversational AI Chatbot</a>
+                            <ul class="smenu">
+                                <li>
+                                    <a href="#">Google DiagFlow</a>
+                                </li>
+                                <li>
+                                    <a href="#">Rasa Bot Platform</a>
+                                </li>
+                                <li>
+                                    <a href="#">FaceBook Messanger Integration</a>
+                                </li>
+                                <li>
+                                    <a href="#">Amazon Alexa Integration</a>
+                                </li>
+                                <li>
+                                    <a href="#">Microsoft Bot Framework Integration</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="item">- Data Sources</a>
+                            <ul class="smenu">
+                                <li>
+                                    <a href="#">Dataset/Text Corpus/Data Sources</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="content">{% block content %} {% endblock %}</div>
+        </div>
+        <!-- 
+    <footer class="footer">
+        Copyright © 2020 Design : NKUST-MIS Version : 1.0
+    </footer> -->
+
+        <script src="{% static 'app_backend/js/jquery-3.4.1.min.js' %}"></script>
+        <script src="{% static 'app_backend/js/userindex.js' %}"></script>
+        <script src="https://d3js.org/d3.v4.js"></script>
+
+        <script>
+            (function () {
+                window.onload = function () {
+                    var loadTime =
+                        window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+                    document.querySelector('.loadingTime').innerHTML = 'Page load time is ' + loadTime / 1000 + 's';
+                };
+                getRandSent();
+            })();
+        </script>
+        {% block script %} {% endblock %}
+    </body>
+</html>

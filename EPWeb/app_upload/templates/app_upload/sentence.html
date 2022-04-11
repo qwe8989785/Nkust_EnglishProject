@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dbtest</title>
+    <!-- csslink -->
+    <link rel="stylesheet" href="{% static 'app_upload/css/dbrearend_style.css' %}">
+</head>
+
+<body>
+    <h1>DBtest</h1>
+
+    <section class="tablewrap">
+        <table>
+            <tr>
+                <td class="table-id">id</td>
+                <td class="table-level">level</td>
+                <td class="table-content">content</td>
+            </tr>
+        </table>
+        <div class="talbescrollwrap">
+            <table>
+                {% for sent in sentobj %}
+                <tr>
+                    <td class="table-id">{{sent.id}}</td>
+                    <td class="table-level">{{sent.sent_level}}</td>
+                    <td class="table-content">{{sent.content}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+    {% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token%}
+        <input type="file" name="document" class="choose-btn" accept=".csv">
+        <button type="submit" class="upload-btn">上傳檔案</button>
+    </form>
+    {% endblock %}
+</body>
+
+</html>

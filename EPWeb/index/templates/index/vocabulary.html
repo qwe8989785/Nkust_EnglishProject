@@ -1,0 +1,115 @@
+{% extends 'index/basic.html' %} {% load static %} {% block content %}
+
+<h1>Vocabulary</h1>
+<p>Display Options: Hyponym/Hypernum, Antonyms, Meronyms/Holonyms, Troponymy/Entailment, Topics, Level</p>
+<div class="model_wrap">
+    <p>Model</p>
+    <select name="model_wrap" id="model_wrap">
+        <option value="Vocabulary">Vocabulary</option>
+        <option value="Vocabulaty quantity">Vocabulaty quantity</option>
+    </select>
+</div>
+<div id="Vocabulary_quantity_content">
+    <div class="funtctionbtn">
+        <div class="Demobtn">Demo</div>
+        <div class="Usagebtn">Download Program</div>
+    </div>
+    <div class="Demowrap">
+        <div class="ETOwrap">
+            <p>Level</p>
+            <form class="ETOform" action="">
+                <select name="levelselect" id="levelselect">
+                    <option value="A1">A1</option>
+                    <option value="A2">A2</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                    <option value="C1">C1</option>
+                    <option value="C2">C2</option>
+                    <option value="All">ALL</option>
+                </select>
+            </form>
+        </div>
+        <button onclick="call_getVgDate_POS()" class="run-btn">RUN</button>
+        <div class="clear"></div>
+    </div>
+    <div class="Usagewrap"></div>
+
+    <div class="runwrap"></div>
+    <svg class="vocabulary_svg" width="960" height="500"></svg>
+</div>
+<div id="Vocabulary_content">
+    <div class="funtctionbtn">
+        <div class="Demobtn">Demo</div>
+        <div class="Usagebtn">Download Program</div>
+    </div>
+    <div class="Demowrap">
+        <div class="titlewrap">
+            <p>Vocabulary</p>
+            <input id="originbox" class="" type="text" placeholder='E.g. "apple"' />
+        </div>
+
+        <button onclick="getVgWord()" class="run-btn">RUN</button>
+        <div class="clear"></div>
+    </div>
+    <div class="Usagewrap"></div>
+    <div class="runwrap">
+        <div id="vocabulary_container">
+            <div class="vocabularytitle">
+                <h1 id="vocabularytitle_output"></h1>
+                <h2 class="definition"></h2>
+                <h2 id="vocabularytitle_pos"></h2>
+                <p>US</p>
+                <p id="pinyin"></p>
+            </div>
+
+            <div class="vocabularycontent">
+                <p id="vocabularytitle_level" class="classify"></p>
+
+                <h2>Example</h2>
+                <ul id="example" class="example"></ul>
+                <div id="Synonyms" class="synonymswrap">
+                    <h2>Synonyms</h2>
+                    <div id="Synonyms_box"></div>
+                </div>
+
+                <div id="antonyms" class="antonymswrap">
+                    <h2>Antonyms</h2>
+                    <div id="antonyms_box"></div>
+                </div>
+
+                <div id="hypernyms" class="hypernymswrap">
+                    <h2>Hypernyms</h2>
+                    <div id="hypernyms_box"></div>
+                </div>
+                <div id="hyponyms" class="hyponymswrap">
+                    <h2>Hyponyms</h2>
+                    <div id="hyponyms_box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block script %}
+
+<script>
+    (function () {
+        $('#vocabulary_container').hide();
+        $('#Vocabulary_quantity_content').hide();
+        $('#model_wrap').on('change', (o) => {
+            if (o.target.value === 'Vocabulaty quantity') {
+                $('#Vocabulary_quantity_content').show();
+                $('#Vocabulary_content').hide();
+                getWordCount();
+            } else if (o.target.value === 'Vocabulary') {
+                $('#vocabulary_container').hide();
+                $('#Vocabulary_quantity_content').hide();
+                $('#Vocabulary_content').show();
+                $('#Vocabulary_content .funtctionbtn').show();
+                $('#Vocabulary_content .Demowrap').show();
+            }
+        });
+    })();
+</script>
+
+{% endblock %}

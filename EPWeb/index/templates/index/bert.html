@@ -1,0 +1,48 @@
+{% extends 'index/basic.html' %} {% load static %} {% block content %}
+
+<h1>bert</h1>
+<p>bert</p>
+
+<div class="model_wrap">
+    <p>Model</p>
+    <select name="model_wrap" id="model_wrap">
+        <option value="bert">bert</option>
+    </select>
+</div>
+
+<div class="funtctionbtn">
+    <div class="Demobtn">Demo</div>
+    <div class="Usagebtn">Download Program</div>
+</div>
+<div class="Demowrap">
+    <!-- <div class="ETOwrap">
+        <p>Enter test or</p>
+        <select name="demoselect" id="demoselect">
+            <option value="Please select a sample sentence">Please select a sample sentence</option>
+        </select>
+    </div> -->
+
+    <div class="titlewrap">
+        <p>Sentence</p>
+        <input
+            id="originbox"
+            class=""
+            type="text"
+            placeholder='E.g. "He bought a [MASK] of milk."'
+            value="He bought a [MASK] of milk."
+        />
+    </div>
+
+    <button onclick="bertSpace()" class="run-btn">Run</button>
+    <div class="clear"></div>
+</div>
+<div class="Usagewrap"></div>
+<div class="runwrap">
+    <table id="spaCy_tokenization_table"></table>
+</div>
+
+{% endblock %} {% block script %}
+<script>
+    bertSpace();
+</script>
+{% endblock %}

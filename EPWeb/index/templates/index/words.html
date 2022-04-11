@@ -1,0 +1,59 @@
+{% extends 'index/basic.html' %} {% load static %} {% block content %}
+<h1>Words</h1>
+<p>Click a column title to sort that column. Click again to reverse the sort.</p>
+
+<div class="model_wrap">
+    <p>Model</p>
+    <select name="words_select" id="words_select">
+        <option value="Wrods">Words</option>
+        <!-- <option value="spaCy square">spaCy square</option> -->
+    </select>
+</div>
+
+<div class="funtctionbtn">
+    <div class="Demobtn">Demo</div>
+    <div class="Usagebtn">Download Program</div>
+</div>
+<div class="Demowrap">
+    <!-- <div class="titlewrap">
+        <div class="ETOwrap">
+            <p>Enter test or</p>
+            <select name="demoselect" id="demoselect">
+                <option value="Please select a sample sentence">Please select a sample sentence</option>
+            </select>
+        </div>
+        <p>Sentence</p>
+        <input id="originbox" class="" type="text" placeholder='E.g. "They bought Jim the gift he always wanted."' />
+    </div> -->
+
+    <button class="run-btn">RUN</button>
+    <div class="clear"></div>
+</div>
+<div class="Usagewrap"></div>
+
+<div style="display: flex" class="runwrap">
+    <div style="min-width: 340px; overflow-y: scroll; margin-right: 20px" class="wordsContainer"></div>
+    <div style="overflow-y: scroll" class="wordSentenceContainer"></div>
+</div>
+
+{% endblock %} {% block script %}
+
+<script>
+    $.ajax({
+        type: 'POST',
+        url: '/getWordList',
+        success: function (response) {
+            let output = '<tr><td>Number of Sentences</td><td>Word / Word Family</td></tr>';
+            response.Word.forEach((e, index) => {
+                output += `
+            <tr>
+                <td>${response.sentCount[index]}</td>
+                <td onclick="call_getSentByWord(this)" calss="SentByWord" >${response.Word[index]}</td>
+            </tr>    
+                `;
+            });
+            $('.wordsContainer').append(output);
+        },
+    });
+</script>
+{% endblock %}
